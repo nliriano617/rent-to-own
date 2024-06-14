@@ -1,0 +1,18 @@
+body {
+  background-color: #1944A4;
+}
+
+h1, p {
+  color: #fff;
+}
+
+.card-text {
+  color: #000;
+}
+
+img {
+  float: left;
+  width:  348px;
+  height: 261px;
+  object-fit: cover;
+}
