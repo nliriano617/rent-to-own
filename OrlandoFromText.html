@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orlando Rent To Own Inventory</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      .card-text span.badge {
+        font-size: 0.95rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="/">Rent To Own Auto Centers</a>
+      </div>
+    </nav>
+
+    <div class="alert alert-warning text-center mb-0" role="alert">
+      🚗 We moved! Our new address is:
+      <a
+        href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9"
+        target="_blank"
+        class="alert-link"
+      >
+        <strong>1217 Spruce Ave, Orlando, FL 32824</strong>
+      </a>
+    </div>
+
+    <div class="container mt-5">
+      <h1>Orlando Rent To Own Inventory</h1>
+      <p>Check out our latest inventory below and call us at 321-319-4300:</p>
+
+      <div id="inventoryRow" class="row"></div>
+    </div>
+
+    <footer class="bg-dark text-white text-center py-4 mt-5">
+      <div class="container">
+        <p class="mb-0">&copy; 2024 Rent To Own Auto Centers. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Put your text file in the same folder as this HTML, or update the path.
+      const INVENTORY_TXT_PATH = "./orlando_rto_inventory_with_images.txt";
+
+      function escapeHtml(str) {
+        return String(str)
+          .replaceAll("&", "&amp;")
+          .replaceAll("<", "&lt;")
+          .replaceAll(">", "&gt;")
+          .replaceAll('"', "&quot;")
+          .replaceAll("'", "&#039;");
+      }
+
+      function parseInventoryLine(line) {
+        // Expected format:
+        // 01. Title | RTO#### | ./images/cars/file.jpg | file.jpg | Notes
+        const m = line.match(/^\s*\d+\.\s*(.+)$/);
+        if (!m) return null;
+
+        const parts = m[1].split("|").map((p) => p.trim());
+        if (parts.length < 4) return null;
+
+        const title = parts[0] || "";
+        const rto = parts[1] || "";
+        const imgSrc = parts[2] || "";
+        const imgName = parts[3] || "";
+        const notes = (parts[4] || "").trim();
+
+        return { title, rto, imgSrc, imgName, notes };
+      }
+
+      function buildCardHtml(item) {
+        const title = escapeHtml(item.title);
+        const rto = escapeHtml(item.rto);
+        const imgSrc = escapeHtml(item.imgSrc);
+        const notes = escapeHtml(item.notes);
+
+        // Display notes in red like the original site did
+        const noteHtml = notes
+          ? ` <span style="color:red"> ${notes} </span>`
+          : "";
+
+        return `
+          <div class="col-md-4 mb-4">
+            <div class="card">
+              <img src="${imgSrc}" class="card-img-top" alt="${title}" />
+              <div class="card-body">
+                <h5 class="card-title">${title}</h5>
+                <p class="card-text">${rto}${noteHtml}</p>
+              </div>
+            </div>
+          </div>
+        `;
+      }
+
+      async function loadInventory() {
+        const row = document.getElementById("inventoryRow");
+        row.innerHTML = "";
+
+        try {
+          const resp = await fetch(INVENTORY_TXT_PATH, { cache: "no-store" });
+          if (!resp.ok) throw new Error(`Failed to load: ${resp.status}`);
+
+          const text = await resp.text();
+          const lines = text.split(/\r?\n/);
+
+          for (const line of lines) {
+            // Skip headers / blanks
+            if (!line.trim()) continue;
+            if (line.startsWith("Orlando Rent To Own")) continue;
+            if (line.startsWith("Generated:")) continue;
+            if (line.startsWith("Columns:")) continue;
+            if (line.startsWith("Total entries")) continue;
+
+            const item = parseInventoryLine(line);
+            if (!item) continue;
+
+            row.insertAdjacentHTML("beforeend", buildCardHtml(item));
+          }
+        } catch (err) {
+          row.innerHTML = `
+            <div class="col-12">
+              <div class="alert alert-danger">
+                Could not load inventory file. ${escapeHtml(err.message)}
+                <br /><br />
+                Make sure you're running this page from a web server (not opened as a file).
+              </div>
+            </div>
+          `;
+        }
+      }
+
+      loadInventory();
+    </script>
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
