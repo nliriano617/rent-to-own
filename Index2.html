@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="images/my-logo2.png" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HTZ6VWYMZ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag("js", new Date());
+      gtag("config", "G-7HTZ6VWYMZ");
+    </script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rent To Own Auto Centers</title>
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --primary: #0b5ed7;
+        --primaryDark: #084bb0;
+        --dark: #0f172a;
+
+        /* Page blues (use different shades per section) */
+        --blue-bg: #0a3d91;
+        --blue-hero-1: #0b5ed7;
+        --blue-hero-2: #062a66;
+
+        --blue-0: #f2f7ff;
+        --blue-1: #e7f1ff;
+        --blue-2: #d6e8ff;
+
+        --blue-mid: #0b4fb6;
+        --blue-mid-2: #073b8f;
+      }
+
+      body {
+        color: #0b1220;
+        background: #ffffff;
+      }
+
+      /* =========================================================
+         SIDE BANNERS (repeat your banner on both sides)
+         Put banner file at: images/OnSaleStarting389.png
+         ========================================================= */
+      .side-banners {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 999;
+      }
+
+      .side-banners .rail {
+        position: absolute;
+        top: 0;
+        height: 100%;
+        width: 210px; /* side rail width */
+        opacity: 0.96;
+        filter: drop-shadow(0 14px 30px rgba(0,0,0,0.25));
+        background-image: url("images/OnSaleStarting389.png");
+        background-repeat: repeat-y;
+        background-size: 180px auto; /* banner size */
+        background-position: center 24px; /* spacing from top */
+      }
+
+      .side-banners .rail.left { left: 0; }
+      .side-banners .rail.right { right: 0; }
+
+      /* Keep content readable with side rails */
+      .page-wrap {
+        padding-left: 220px;
+        padding-right: 220px;
+      }
+
+      /* Hide side banners on smaller screens */
+      @media (max-width: 992px) {
+        .side-banners { display: none; }
+        .page-wrap { padding-left: 0; padding-right: 0; }
+      }
+
+      /* Top utility bar */
+      .utility-bar {
+        background: #0b1220;
+        color: rgba(255,255,255,0.92);
+        font-size: 0.95rem;
+      }
+      .utility-bar a { color: #fff; text-decoration: underline; }
+
+      /* =========================================================
+         HERO (NO IMAGE BACKGROUND — BLUE SHADES ONLY)
+         ========================================================= */
+      .hero {
+        position: relative;
+        min-height: 640px;
+        color: #fff;
+        display: flex;
+        align-items: center;
+
+        /* Blue gradient background (no photo) */
+        background:
+          radial-gradient(1200px 600px at 20% 15%, rgba(255,255,255,0.16), rgba(255,255,255,0) 60%),
+          radial-gradient(900px 500px at 80% 30%, rgba(0,0,0,0.25), rgba(0,0,0,0) 55%),
+          linear-gradient(135deg, var(--blue-hero-1), var(--blue-hero-2));
+        overflow: hidden;
+      }
+
+      /* subtle pattern overlay for depth */
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(255,255,255,0.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,0.06) 1px, transparent 1px);
+        background-size: 36px 36px;
+        opacity: 0.25;
+        pointer-events: none;
+      }
+
+      .hero .container { position: relative; z-index: 1; }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.22);
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+        backdrop-filter: blur(6px);
+      }
+
+      .hero-title {
+        font-weight: 900;
+        letter-spacing: -0.8px;
+        line-height: 1.05;
+      }
+
+      .hero-sub {
+        font-size: 1.15rem;
+        opacity: 0.95;
+      }
+
+      .btn-pill { border-radius: 999px; padding: 12px 22px; font-weight: 800; }
+      .btn-primary { background: var(--primary); border-color: var(--primary); }
+      .btn-primary:hover { background: var(--primaryDark); border-color: var(--primaryDark); }
+      .btn-outline-light { border-width: 2px; }
+
+      /* Cards / sections */
+      .section { padding: 70px 0; }
+      .section-title { font-weight: 900; letter-spacing: -0.4px; }
+
+      .soft-card {
+        border: 1px solid rgba(0,0,0,0.06);
+        border-radius: 16px;
+        box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+      }
+
+      .icon-pill {
+        width: 44px; height: 44px;
+        border-radius: 12px;
+        background: rgba(11,94,215,0.12);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        color: var(--primary);
+      }
+
+      /* Section background shades (blue contrast) */
+      .section-blue-0 { background: var(--blue-0); }
+      .section-blue-1 { background: var(--blue-1); }
+      .section-blue-2 { background: var(--blue-2); }
+
+      /* Steps */
+      .step-num {
+        width: 34px; height: 34px;
+        border-radius: 999px;
+        background: var(--primary);
+        color: #fff;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 900;
+        flex: 0 0 auto;
+      }
+
+      /* Inventory placeholders */
+      .vehicle-img {
+        height: 160px;
+        border-top-left-radius: 16px;
+        border-top-right-radius: 16px;
+        background:
+          linear-gradient(135deg, rgba(11,94,215,0.25), rgba(7,59,143,0.18));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(0,0,0,0.45);
+        font-weight: 800;
+      }
+
+      /* CTA band (blue, not black) */
+      .cta-band {
+        background: linear-gradient(135deg, var(--blue-mid), var(--blue-mid-2));
+        color: #fff;
+      }
+      .cta-band .btn-outline-light {
+        border-radius: 999px;
+        padding: 12px 22px;
+        font-weight: 800;
+      }
+
+      /* Footer */
+      footer {
+        background: #0b1220;
+        color: #fff;
+      }
+      footer a { color: #fff; text-decoration: underline; }
+      footer a:hover { color: #fff; opacity: 0.9; }
+
+      @media (max-width: 991.98px) { .hero { min-height: 600px; } }
+      @media (max-width: 767.98px) {
+        .hero-title { font-size: 2.2rem; }
+        .section { padding: 55px 0; }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Side banners -->
+    <div class="side-banners" aria-hidden="true">
+      <div class="rail left"></div>
+      <div class="rail right"></div>
+    </div>
+
+    <div class="page-wrap">
+      <!-- Utility Bar -->
+      <div class="utility-bar py-2">
+        <div class="container d-flex flex-wrap justify-content-between align-items-center">
+          <div class="mb-1 mb-md-0">
+            📍 New Location:
+            <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank">
+              1217 Spruce Ave, Orlando, FL 32824
+            </a>
+          </div>
+          <div>
+            📞 <a href="tel:3213194300">321-319-4300</a> &nbsp; • &nbsp;
+            ✉️ <a href="mailto:orlandorc1@rtocenter.com">orlandorc1@rtocenter.com</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background:#0b1220;">
+        <div class="container">
+          <a class="navbar-brand font-weight-bold" href="/">Rent To Own Auto Centers</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item"><a class="nav-link active" href="/">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="/how-it-works.html">How It Works</a></li>
+              <li class="nav-item"><a class="nav-link" href="/orlando.html">Rent To Own Inventory</a></li>
+              <li class="nav-item"><a class="nav-link" href="/orlandoRetail.html">Retail Inventory (CASH SALE)</a></li>
+              <li class="nav-item"><a class="nav-link" href="/submit-an-application.html">Submit an Application</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Hero -->
+      <header class="hero">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-7">
+              <div class="hero-badge mb-3">Orlando • Rent-to-Own & Cash Sale Options</div>
+              <h1 class="hero-title display-4 mb-3">
+                Get a Reliable Vehicle Without the Loan Headaches.
+              </h1>
+              <p class="hero-sub mb-4">
+                No credit checks. No interest. No hidden fees.
+                Choose a quality vehicle and we’ll fit the payment plan to your budget.
+              </p>
+
+              <div class="d-flex flex-wrap" style="gap: 12px;">
+                <a href="/submit-an-application.html" class="btn btn-primary btn-lg btn-pill">
+                  Get Approved
+                </a>
+                <a href="/orlando.html" class="btn btn-outline-light btn-lg btn-pill">
+                  Browse Rent-To-Own Cars
+                </a>
+                <a href="/orlandoRetail.html" class="btn btn-outline-light btn-lg btn-pill">
+                  Browse Cash Sale Cars
+                </a>
+              </div>
+
+              <div class="mt-4">
+                <small style="opacity: 0.95;">
+                  Payments may include tax/tag, oil changes, warranty coverage (engine/drivetrain/transmission),
+                  and 24/7 roadside assistance — based on your program details.
+                </small>
+              </div>
+            </div>
+
+            <div class="col-lg-5 mt-4 mt-lg-0">
+              <div class="card soft-card">
+                <div class="card-body p-4">
+                  <h4 class="section-title mb-2">Quick Start</h4>
+                  <p class="mb-4 text-muted">
+                    Answer a few questions and we’ll guide you to the right next step.
+                  </p>
+
+                  <div class="mb-3">
+                    <div class="d-flex align-items-start" style="gap:12px;">
+                      <div class="icon-pill">✓</div>
+                      <div>
+                        <div class="font-weight-bold">Fast approvals</div>
+                        <div class="text-muted small">Apply online in minutes.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <div class="d-flex align-items-start" style="gap:12px;">
+                      <div class="icon-pill">★</div>
+                      <div>
+                        <div class="font-weight-bold">Customer-loved</div>
+                        <div class="text-muted small">See what buyers say on Google.</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="mb-4">
+                    <div class="d-flex align-items-start" style="gap:12px;">
+                      <div class="icon-pill">↺</div>
+                      <div>
+                        <div class="font-weight-bold">Flexible program</div>
+                        <div class="text-muted small">Return the vehicle anytime (program terms apply).</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="/submit-an-application.html" class="btn btn-primary btn-block btn-pill btn-lg">
+                    Start Application
+                  </a>
+                  <a href="/how-it-works.html" class="btn btn-outline-primary btn-block btn-pill mt-2">
+                    Learn How It Works
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </header>
+
+      <!-- How it works (blue shade 0) -->
+      <section class="section section-blue-0">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <h2 class="section-title mb-2">How It Works</h2>
+              <p class="text-muted mb-0">
+                A simple process designed to get you driving quickly.
+              </p>
+            </div>
+            <div class="col-lg-5 text-lg-right mt-3 mt-lg-0">
+              <a href="/how-it-works.html" class="btn btn-outline-primary btn-pill">Full Details</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="step-num mr-3">1</div>
+                    <h5 class="mb-0 font-weight-bold">Apply Online</h5>
+                  </div>
+                  <p class="text-muted mb-0">
+                    Submit your application and we’ll review your info quickly.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="step-num mr-3">2</div>
+                    <h5 class="mb-0 font-weight-bold">Pick Your Vehicle</h5>
+                  </div>
+                  <p class="text-muted mb-0">
+                    Browse our inventory and choose a vehicle that fits your needs.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="step-num mr-3">3</div>
+                    <h5 class="mb-0 font-weight-bold">Drive Today</h5>
+                  </div>
+                  <p class="text-muted mb-0">
+                    Finalize your plan and get on the road with confidence.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Featured inventory (blue shade 1) -->
+      <section class="section section-blue-1">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <h2 class="section-title mb-2">Featured Vehicles</h2>
+              <p class="text-muted mb-0">
+                A quick look at what’s popular right now. (These cards can be wired to your real inventory later.)
+              </p>
+            </div>
+            <div class="col-lg-5 text-lg-right mt-3 mt-lg-0">
+              <a href="/orlando.html" class="btn btn-primary btn-pill">See All Rent-To-Own</a>
+              <a href="/orlandoRetail.html" class="btn btn-outline-primary btn-pill ml-2">See All Cash Sale</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="vehicle-img">Vehicle Photo</div>
+                <div class="card-body">
+                  <h5 class="font-weight-bold mb-1">2018–2022 Sedan</h5>
+                  <p class="text-muted mb-3">Great MPG • Comfortable • Reliable</p>
+                  <a href="/orlando.html" class="btn btn-outline-primary btn-pill btn-block">View Similar</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="vehicle-img">Vehicle Photo</div>
+                <div class="card-body">
+                  <h5 class="font-weight-bold mb-1">SUV / Crossover</h5>
+                  <p class="text-muted mb-3">Family-ready • Space • Versatile</p>
+                  <a href="/orlando.html" class="btn btn-outline-primary btn-pill btn-block">View Similar</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="vehicle-img">Vehicle Photo</div>
+                <div class="card-body">
+                  <h5 class="font-weight-bold mb-1">Work Truck</h5>
+                  <p class="text-muted mb-3">Capability • Utility • Tough</p>
+                  <a href="/orlando.html" class="btn btn-outline-primary btn-pill btn-block">View Similar</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Reviews (blue shade 2) -->
+      <section class="section section-blue-2">
+        <div class="container">
+          <div class="row align-items-end mb-4">
+            <div class="col-lg-7">
+              <h2 class="section-title mb-2">What Customers Say</h2>
+              <p class="text-muted mb-0">Real feedback from our Google reviews.</p>
+            </div>
+            <div class="col-lg-5 text-lg-right mt-3 mt-lg-0">
+              <a
+                href="https://www.google.com/maps/place/Rent+To+Own+Auto+Centers/@28.4648244,-81.3963049,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7870332bc44f1:0xa198a21f4031c58d!8m2!3d28.4648244!4d-81.3963049!16s%2Fg%2F11cly7jnzv?entry=ttu"
+                class="btn btn-outline-primary btn-pill"
+                target="_blank"
+              >View All Reviews</a>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="font-weight-bold">Jean Placide <span class="text-muted small">• 3/7/2024</span></div>
+                  <div class="text-primary font-weight-bold">★★★★★</div>
+                  <p class="text-muted mb-0 mt-2">“They are very nice!”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="font-weight-bold">Norma Ferrer <span class="text-muted small">• 1/27/2024</span></div>
+                  <div class="text-primary font-weight-bold">★★★★★</div>
+                  <p class="text-muted mb-0 mt-2">“The best place to deal very friendly and easy to work wi...”</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+              <div class="card soft-card h-100">
+                <div class="card-body p-4">
+                  <div class="font-weight-bold">Mommy Love <span class="text-muted small">• 1/3/2024</span></div>
+                  <div class="text-primary font-weight-bold">★★★★★</div>
+                  <p class="text-muted mb-0 mt-2">“Excellent selection of vehicles!”</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- CTA Band -->
+      <section class="cta-band py-5">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="section-title mb-2">Ready to get approved?</h2>
+              <p class="mb-0" style="opacity: 0.95;">
+                Start the application now — then browse inventory while we review.
+              </p>
+            </div>
+            <div class="col-lg-4 text-lg-right mt-3 mt-lg-0">
+              <a href="/submit-an-application.html" class="btn btn-primary btn-pill btn-lg">Start Application</a>
+              <a href="/orlando.html" class="btn btn-outline-light btn-pill btn-lg ml-2">Browse Cars</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-4 mb-4">
+              <h5 class="font-weight-bold">Contact</h5>
+              <p class="mb-1">
+                Email: <a href="mailto:orlandorc1@rtocenter.com">orlandorc1@rtocenter.com</a>
+              </p>
+              <p class="mb-1">
+                Phone: <a href="tel:3213194300">321-319-4300</a>
+              </p>
+              <p class="mb-0">
+                Address:
+                <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank">
+                  1217 Spruce Ave, Orlando, FL 32824
+                </a>
+              </p>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+              <h5 class="font-weight-bold">Quick Links</h5>
+              <ul class="list-unstyled mb-0">
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/orlando.html">Rent To Own Inventory</a></li>
+                <li><a href="/orlandoRetail.html">Retail Inventory (CASH SALE)</a></li>
+                <li><a href="/submit-an-application.html">Submit an Application</a></li>
+              </ul>
+            </div>
+
+            <div class="col-lg-4 mb-4">
+              <h5 class="font-weight-bold">Follow</h5>
+              <ul class="list-unstyled mb-3">
+                <li><a href="https://www.facebook.com/61587563066623">Facebook RTO ORLANDO</a></li>
+                <li><a href="https://www.twitter.com/rtoacenters">Twitter/X</a></li>
+                <li><a href="https://www.instagram.com/rtoacenters">Instagram</a></li>
+              </ul>
+
+              <h6 class="font-weight-bold">Newsletter</h6>
+              <form>
+                <div class="input-group">
+                  <input type="email" class="form-control" placeholder="Enter your email" />
+                  <div class="input-group-append">
+                    <button class="btn btn-primary" type="button">Subscribe</button>
+                  </div>
+                </div>
+                <small class="d-block mt-2" style="opacity: 0.85;">
+                  (Hook this to Mailchimp/Formspree when ready.)
+                </small>
+              </form>
+            </div>
+          </div>
+
+          <hr style="border-color: rgba(255,255,255,0.15);" />
+          <div class="text-center">
+            <p class="mb-0">&copy; 2024 Rent To Own Auto Centers. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  </body>
+</html>
