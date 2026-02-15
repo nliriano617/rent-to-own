@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" href="images/my-logo2.png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-7HTZ6VWYMZ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag("js", new Date());
+    gtag("config", "G-7HTZ6VWYMZ");
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rent To Own Auto Centers</title>
+
+  <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --primary: #0b5ed7;
+      --primaryDark: #084bb0;
+      --dark: #0f172a;
+
+      --blue-hero-1: #0b5ed7;
+      --blue-hero-2: #062a66;
+
+      --blue-0: #f2f7ff;
+      --blue-1: #e7f1ff;
+      --blue-2: #d6e8ff;
+
+      --blue-mid: #0b4fb6;
+      --blue-mid-2: #073b8f;
+    }
+
+    body { color: #0b1220; background: #ffffff; }
+
+    /* Side banners */
+    .side-banners {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .side-banners .rail {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 210px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0.96;
+      filter: drop-shadow(0 14px 30px rgba(0,0,0,0.25));
+    }
+
+    .side-banners .rail img {
+      width: 180px;
+      max-width: 16vw;
+      height: auto;
+    }
+
+    .side-banners .rail.left { left: 0; }
+    .side-banners .rail.right { right: 0; }
+
+    .page-wrap {
+      padding-left: 220px;
+      padding-right: 220px;
+    }
+
+    @media (max-width: 992px) {
+      .side-banners { display: none; }
+      .page-wrap { padding-left: 0; padding-right: 0; }
+    }
+
+    .utility-bar {
+      background: #0b1220;
+      color: rgba(255,255,255,0.92);
+      font-size: 0.95rem;
+    }
+
+    .utility-bar a { color: #fff; text-decoration: underline; }
+
+    .hero {
+      min-height: 640px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--blue-hero-1), var(--blue-hero-2));
+    }
+
+    .section { padding: 70px 0; }
+    .section-title { font-weight: 900; }
+
+    .section-blue-1 { background: var(--blue-1); }
+
+    .soft-card {
+      border-radius: 16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,0.06);
+    }
+
+    .vehicle-img {
+      height: 160px;
+      background: linear-gradient(135deg, rgba(11,94,215,0.25), rgba(7,59,143,0.18));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+
+    .featured-banner {
+      text-align: center;
+      margin: 30px 0 40px 0;
+    }
+
+    .featured-banner img {
+      max-width: 500px;
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .featured-banner img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+    }
+
+    footer {
+      background: #0b1220;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Side banners -->
+  <div class="side-banners" aria-hidden="true">
+    <div class="rail left">
+      <img src="images/OnSaleStarting389.png" alt="" />
+    </div>
+    <div class="rail right">
+      <img src="images/OnSaleStarting389.png" alt="" />
+    </div>
+  </div>
+
+  <div class="page-wrap">
+
+    <!-- Featured Vehicles Section -->
+    <section class="section section-blue-1">
+      <div class="container">
+        <div class="row align-items-end mb-4">
+          <div class="col-lg-7">
+            <h2 class="section-title mb-2">Featured Vehicles</h2>
+            <p class="text-muted mb-0">
+              A quick look at what’s popular right now.
+            </p>
+          </div>
+        </div>
+
+        <!-- NEW CLICKABLE BANNER -->
+        <div class="featured-banner">
+          <a href="https://www.rtocenter.com/orlando.html">
+            <img src="images/OnSaleStarting389.png" alt="On Sale Rent To Own Vehicles Starting from $389 Down">
+          </a>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4">
+            <div class="card soft-card h-100">
+              <div class="vehicle-img">Vehicle Photo</div>
+              <div class="card-body">
+                <h5 class="font-weight-bold mb-1">Sedan</h5>
+                <p class="text-muted mb-3">Great MPG • Comfortable • Reliable</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card soft-card h-100">
+              <div class="vehicle-img">Vehicle Photo</div>
+              <div class="card-body">
+                <h5 class="font-weight-bold mb-1">SUV</h5>
+                <p class="text-muted mb-3">Family-ready • Space • Versatile</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4">
+            <div class="card soft-card h-100">
+              <div class="vehicle-img">Vehicle Photo</div>
+              <div class="card-body">
+                <h5 class="font-weight-bold mb-1">Truck</h5>
+                <p class="text-muted mb-3">Capability • Utility • Tough</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+</body>
+</html>
