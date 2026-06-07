@@ -20,6 +20,34 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="./css/styles2.css" />
+  <style>
+    .sold-card {
+      filter: grayscale(100%) brightness(80%);
+      opacity: 0.55;
+      pointer-events: none;
+      user-select: none;
+    }
+    .sold-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-15deg);
+      font-size: 3rem;
+      font-weight: 900;
+      color: #e74c3c;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7), -1px -1px 2px rgba(0,0,0,0.5);
+      border: 6px solid #e74c3c;
+      border-radius: 12px;
+      padding: 8px 24px;
+      letter-spacing: 6px;
+      opacity: 0.9;
+      pointer-events: none;
+      z-index: 10;
+    }
+    .card {
+      position: relative;
+    }
+  </style>
 </head>
 
 <body>
@@ -82,12 +110,13 @@
     <div class="row">
 
       <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/9018.JPG" class="card-img-top" alt="..." />
+        <div class="card sold-card">
+          <img src="./images/cars/sold/9018.JPG" class="card-img-top" alt="..." />
+            <div class="sold-overlay">SOLD</div>
 
           <div class="card-body">
             <h5 class="card-title">2015 BMW 320i 4 Cyl Turbo</h5>
-            <p class="card-text">RTO9018 <span style="color:red "> RTO $1750 DOWN! OR Cash Sale $6995 142K miles  </span> </p>
+            <p class="card-text">RTO9018 <span style="color:red "> SOLD! </span> </p>
             <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
           </div>
         </div>
