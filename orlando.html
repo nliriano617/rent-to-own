@@ -20,35 +20,31 @@
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" type="text/css" href="./css/styles2.css" />
-  <style>
-    .sold-card {
+</head>
+  <style id="sold-stamp-css">
+    .card { position: relative; }
+    .sold-card { pointer-events: none; user-select: none; }
+    .sold-card .card-img-top,
+    .sold-card .card-body {
       filter: grayscale(100%) brightness(80%);
       opacity: 0.55;
-      pointer-events: none;
-      user-select: none;
     }
-    .sold-overlay {
+    .sold-stamp {
       position: absolute;
       top: 50%;
       left: 50%;
-      transform: translate(-50%, -50%) rotate(-15deg);
-      font-size: 3rem;
-      font-weight: 900;
-      color: #e74c3c;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.7), -1px -1px 2px rgba(0,0,0,0.5);
-      border: 6px solid #e74c3c;
-      border-radius: 12px;
-      padding: 8px 24px;
-      letter-spacing: 6px;
-      opacity: 0.9;
+      width: 85%;
+      height: auto;
+      max-width: none;
+      object-fit: contain;
+      float: none;
+      transform: translate(-50%, -50%) rotate(-18deg);
       pointer-events: none;
+      user-select: none;
       z-index: 10;
-    }
-    .card {
-      position: relative;
+      filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.45));
     }
   </style>
-</head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -188,7 +184,8 @@
       <!-- END -->
         <!-- START -->
       <div class="col-md-4 mb-4">
-        <div class="card">
+        <div class="card sold-card">
+          <img class="sold-stamp" src="./images/cars/sold_sticker.png" alt="SOLD" />
           <img src="./images/cars/sold/9046.jpg" class="card-img-top" alt="..." />
 
           <div class="card-body">
