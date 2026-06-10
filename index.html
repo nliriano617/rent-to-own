@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="icon" type="image/png" href="images/my-logo2.png">
+    <link rel="icon" type="image/png" href="images/my-logo2.png" />
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -18,50 +18,35 @@
     </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Rent To Own Auto Centers</title>
+    <title>Rent To Own Auto Centers — Nice Cars for Good People | Orlando</title>
+    <meta
+      name="description"
+      content="Rent To Own Auto Centers in Orlando, FL. No credit checks, no interest, no hidden fees. Quality late-model vehicles for every budget. Apply today!"
+    />
     <!-- Bootstrap CSS -->
     <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <!-- Custom CSS -->
-    <style>
-      .hero {
-        background-image: url("./images/cars/hero2.png");
-        background-size: cover;
-        background-position: center;
-        height: 500px;
-        display: flex;
-        justify-content: center;
-        align-items: flex-end;
-        color: white;
-        text-align: center;
-        padding-bottom: 30px;
-      }
-
-      .hero-link {
-        background-color: #007bff;
-        border: none;
-        border-radius: 25px;
-        padding: 10px 20px;
-        font-size: 18px;
-        font-weight: bold;
-        color: white;
-        text-decoration: none;
-        transition: background-color 0.3s ease;
-      }
-
-      .hero-link:hover {
-        background-color: #0056b3;
-        color: #fff;
-      }
-    </style>
+    <!-- Shared modern site styles -->
+    <link href="css/site.css" rel="stylesheet" />
   </head>
   <body>
+    <!-- Announcement bar -->
+    <div class="rto-announce">
+      🚗 We've moved! Come see us at
+      <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank"
+        >1217 Spruce Ave, Orlando, FL 32824</a
+      >
+    </div>
+
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg rto-navbar sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="/">Rent To Own Auto Centers</a>
+        <a class="navbar-brand" href="/">
+          <img src="images/my-logo2.png" alt="Rent To Own Auto Centers logo" />
+          <span>Rent To Own Auto Centers</span>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -74,7 +59,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link active" href="/">Home</a>
             </li>
@@ -86,12 +71,12 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/orlandoRetail.html"
-                >Retail Inventory (CASH SALE)</a
+                >Retail Inventory (Cash Sale)</a
               >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/submit-an-application.html"
-                >Submit an Application</a
+            <li class="nav-item ml-lg-2">
+              <a class="nav-link nav-cta" href="/submit-an-application.html"
+                >Apply Now</a
               >
             </li>
           </ul>
@@ -99,178 +84,281 @@
       </div>
     </nav>
 
-    <!-- MOVING ON OCTOBER 1 MESSAGE -->
-    <div class="alert alert-warning text-center mb-0" role="alert">
-      🚗 We moved! Our new address is:
-      <a
-        href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9"
-        target="_blank"
-        class="alert-link"
-      >
-        <strong>1217 Spruce Ave, Orlando, FL 32824</strong>
-      </a>
-    </div>
-
-    <!-- Hero Section -->
-    <div class="hero">
+    <!-- Hero -->
+    <header class="rto-hero">
       <div class="container">
-        <h1>
-          <a href="/orlando.html" class="hero-link">Explore Our Orlando Cars</a>
-        </h1>
+        <div class="rto-hero__content">
+          <h1>Drive Today — No Credit Check Required</h1>
+          <p class="lead">
+            Quality, late-model vehicles for every budget. Whether your credit
+            score is 800 or 400, we tailor a payment plan that works for you.
+          </p>
+          <div class="rto-hero__badges">
+            <span class="rto-pill">✓ No Credit Checks</span>
+            <span class="rto-pill">✓ No Interest</span>
+            <span class="rto-pill">✓ No Hidden Fees</span>
+          </div>
+          <div>
+            <a href="/orlando.html" class="btn btn-accent btn-lg mr-2 mb-2"
+              >Explore Our Orlando Cars</a
+            >
+            <a
+              href="/submit-an-application.html"
+              class="btn btn-primary btn-lg mb-2"
+              >Apply in Minutes</a
+            >
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
 
-    <!-- Three Columns Section -->
-    <section class="py-5">
+    <!-- Value props -->
+    <section class="rto-section">
       <div class="container">
+        <h2 class="rto-section__title">Why Choose Rent To Own?</h2>
+        <p class="rto-section__subtitle">
+          A simple, honest alternative to high-interest, high-down-payment car
+          lots.
+        </p>
         <div class="row">
-          <!-- Application Section -->
-          <div class="col-md-4">
-            <h2 class="text-center">NO CREDIT CHECKS!</h2>
-            <h2 class="text-center">NO INTEREST!</h2>
-            <h2 class="text-center">NO FEES!</h2>
-            <p class="text-center">Apply today for quick and easy approval!</p>
-            <p class="text-center">
-              <a
-                href="/submit-an-application.html"
-                class="btn btn-primary btn-lg"
-                >Submit an Application</a
-              >
-            </p>
+          <div class="col-md-4 mb-4">
+            <div class="rto-card">
+              <div class="rto-card__icon">🚗</div>
+              <h3>Quality Vehicles</h3>
+              <p>
+                Choose from a selection of quality, late-model vehicles —
+                regardless of your credit score.
+              </p>
+            </div>
           </div>
-          <!-- Story Section -->
-          <div class="col-md-4">
-            <h2>Our Story</h2>
-            <p>
-              At Rent To Own Auto Centers, we understand that life can throw
-              unexpected challenges, affecting good people's credit scores. This
-              realization led us to develop the Rent To Own Auto Centers
-              concept, providing an alternative to high-interest, high
-              down-payment car lots.
-            </p>
-            <p>
-              With our innovative and straightforward program, you can choose
-              from a selection of quality, late-model vehicles, regardless of
-              your credit score. We don't perform credit checks, making it easy
-              for you to qualify. Whether your credit score is 800 or 400, we
-              tailor your payment plan to suit your budget and preferences.
-            </p>
-            <p>
-              Your payment covers everything from sales tax to license plates,
-              personal property taxes, oil changes, and comprehensive warranty
-              coverage for the engine, drivetrain, and transmission.
-              Additionally, you'll enjoy 24-hour roadside assistance and more.
-              With no need for a co-signer, you have the flexibility to return
-              your vehicle whenever you choose, for any reason. Say goodbye to
-              being "upside-down" in a car loan ever again!
-            </p>
+          <div class="col-md-4 mb-4">
+            <div class="rto-card">
+              <div class="rto-card__icon">💳</div>
+              <h3>One Simple Payment</h3>
+              <p>
+                Your payment covers sales tax, license plates, property taxes,
+                oil changes, and warranty coverage — all in one.
+              </p>
+            </div>
           </div>
-          <!-- Reviews Section -->
-          <div class="col-md-4">
-            <h2 class="text-center">Customer Reviews</h2>
-            <!-- Placeholder Cards for Reviews -->
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Jean Placide - 3/7/2024</h5>
-                <p class="card-text">"They are very nice!"</p>
-                <p class="card-text">★★★★★</p>
-              </div>
+          <div class="col-md-4 mb-4">
+            <div class="rto-card">
+              <div class="rto-card__icon">🛡️</div>
+              <h3>Peace of Mind</h3>
+              <p>
+                Enjoy 24-hour roadside assistance, no co-signer needed, and the
+                freedom to return your vehicle whenever you choose.
+              </p>
             </div>
-            <div class="card mt-3">
-              <div class="card-body">
-                <h5 class="card-title">Norma Ferrer - 1/27/2024</h5>
-                <p class="card-text">
-                  "The best place to deal very friendly and easy to work wi..."
-                </p>
-                <p class="card-text">★★★★★</p>
-              </div>
-            </div>
-            <div class="card mt-3">
-              <div class="card-body">
-                <h5 class="card-title">Mommy Love - 1/3/2024</h5>
-                <p class="card-text">"Excellent selection of vehicles!"</p>
-                <p class="card-text">★★★★★</p>
-              </div>
-            </div>
-            <div class="card mt-3">
-              <div class="card-body">
-                <h5 class="card-title">Briana Coleman - 11/1/2023</h5>
-                <p class="card-text">
-                  "Thank you Jenna, Regan and Yvette!! I am soooo happy to..."
-                </p>
-                <p class="card-text">★★★★★</p>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <!-- End Placeholder Cards -->
-            <!-- Link to View All Reviews -->
-            <div class="text-center mt-3">
-              <a
-                href="https://www.google.com/maps/place/Rent+To+Own+Auto+Centers/@28.4648244,-81.3963049,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7870332bc44f1:0xa198a21f4031c58d!8m2!3d28.4648244!4d-81.3963049!16s%2Fg%2F11cly7jnzv?entry=ttu"
-                class="btn btn-secondary"
-                target="_blank"
-                >View All Reviews</a
-              >
+        <!-- No-fees highlight strip -->
+        <div class="rto-no-strip mt-4">
+          <div class="row">
+            <div class="col-md-4 rto-no-strip__item">
+              <span>NO</span> Credit Checks
             </div>
+            <div class="col-md-4 rto-no-strip__item">
+              <span>NO</span> Interest
+            </div>
+            <div class="col-md-4 rto-no-strip__item">
+              <span>NO</span> Fees
+            </div>
+          </div>
+          <p class="mt-3 mb-0">Apply today for quick and easy approval!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="rto-section rto-section--soft">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="mb-3">Our Story</h2>
+            <div class="rto-story">
+              <p>
+                At Rent To Own Auto Centers, we understand that life can throw
+                unexpected challenges, affecting good people's credit scores.
+                This realization led us to develop the Rent To Own concept —
+                providing an alternative to high-interest, high down-payment car
+                lots.
+              </p>
+              <p>
+                With our innovative and straightforward program, you can choose
+                from a selection of quality, late-model vehicles, regardless of
+                your credit score. We don't perform credit checks, making it
+                easy to qualify. Whether your score is 800 or 400, we tailor your
+                payment plan to suit your budget.
+              </p>
+              <p>
+                With no need for a co-signer, you have the flexibility to return
+                your vehicle whenever you choose, for any reason. Say goodbye to
+                being "upside-down" in a car loan ever again!
+              </p>
+            </div>
+            <a href="/how-it-works.html" class="btn btn-primary mt-2"
+              >See How It Works</a
+            >
+          </div>
+          <div class="col-lg-6">
+            <img
+              src="images/cars/hero2.png"
+              alt="Rent To Own Auto Centers storefront at 1217 Spruce Ave, Orlando"
+              class="img-fluid rounded shadow"
+              style="border-radius: var(--rto-radius)"
+            />
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Reviews -->
+    <section class="rto-section">
+      <div class="container">
+        <h2 class="rto-section__title">What Our Customers Say</h2>
+        <p class="rto-section__subtitle">
+          Rated five stars by drivers across the Orlando area.
+        </p>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="rto-review">
+              <div class="rto-review__stars">★★★★★</div>
+              <p class="rto-review__text">"They are very nice!"</p>
+              <p class="rto-review__author">Jean Placide</p>
+              <p class="rto-review__date">3/7/2024</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="rto-review">
+              <div class="rto-review__stars">★★★★★</div>
+              <p class="rto-review__text">
+                "The best place to deal — very friendly and easy to work with."
+              </p>
+              <p class="rto-review__author">Norma Ferrer</p>
+              <p class="rto-review__date">1/27/2024</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="rto-review">
+              <div class="rto-review__stars">★★★★★</div>
+              <p class="rto-review__text">
+                "Excellent selection of vehicles!"
+              </p>
+              <p class="rto-review__author">Mommy Love</p>
+              <p class="rto-review__date">1/3/2024</p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4">
+            <div class="rto-review">
+              <div class="rto-review__stars">★★★★★</div>
+              <p class="rto-review__text">
+                "Thank you Jenna, Regan and Yvette!! I am soooo happy with my
+                car."
+              </p>
+              <p class="rto-review__author">Briana Coleman</p>
+              <p class="rto-review__date">11/1/2023</p>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-2">
+          <a
+            href="https://www.google.com/maps/place/Rent+To+Own+Auto+Centers/@28.4648244,-81.3963049,17z/data=!3m1!4b1!4m6!3m5!1s0x88e7870332bc44f1:0xa198a21f4031c58d!8m2!3d28.4648244!4d-81.3963049!16s%2Fg%2F11cly7jnzv?entry=ttu"
+            class="btn btn-outline-primary"
+            target="_blank"
+            >Read All Reviews on Google</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA band -->
+    <section class="rto-section rto-section--soft">
+      <div class="container">
+        <div class="rto-cta">
+          <h2>Ready to Get Behind the Wheel?</h2>
+          <p>
+            Quick and easy approval — no credit check, no co-signer, no hassle.
+          </p>
+          <a
+            href="/submit-an-application.html"
+            class="btn btn-accent btn-lg mr-2 mb-2"
+            >Submit an Application</a
+          >
+          <a href="tel:3213194300" class="btn btn-outline-light btn-lg mb-2"
+            >Call 321-319-4300</a
+          >
+        </div>
+      </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="rto-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5>Contact Us</h5>
-            <p>
+            <h5>Visit Us</h5>
+            <p class="mb-1">
+              <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank"
+                >1217 Spruce Ave<br />Orlando, FL 32824</a
+              >
+            </p>
+            <p class="mb-1">
+              Phone: <a href="tel:3213194300">321-319-4300</a>
+            </p>
+            <p class="mb-0">
               Email:
               <a href="mailto:orlandorc1@rtocenter.com"
                 >orlandorc1@rtocenter.com</a
               >
             </p>
-            <p>Phone: 321-319-4300</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Quick Links</h5>
+            <p class="mb-1"><a href="/how-it-works.html">How It Works</a></p>
+            <p class="mb-1">
+              <a href="/orlando.html">Rent To Own Inventory</a>
+            </p>
+            <p class="mb-1">
+              <a href="/orlandoRetail.html">Retail Inventory (Cash Sale)</a>
+            </p>
+            <p class="mb-0">
+              <a href="/submit-an-application.html">Submit an Application</a>
+            </p>
           </div>
           <div class="col-lg-4 mb-4">
             <h5>Follow Us</h5>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/61587563066623">Facebook RTO ORLANDO</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.twitter.com/rtoacenters">Twitter/X</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/rtoacenters">Instagram</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <h5>Newsletter</h5>
-            <form>
-              <div class="input-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Enter your email"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-light" type="button">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-            </form>
+            <div class="rto-social mb-3">
+              <a
+                href="https://www.facebook.com/61587563066623"
+                target="_blank"
+                aria-label="Facebook"
+                title="Facebook"
+                >f</a
+              >
+              <a
+                href="https://www.twitter.com/rtoacenters"
+                target="_blank"
+                aria-label="Twitter/X"
+                title="Twitter/X"
+                >X</a
+              >
+              <a
+                href="https://www.instagram.com/rtoacenters"
+                target="_blank"
+                aria-label="Instagram"
+                title="Instagram"
+                >ig</a
+              >
+            </div>
+            <p class="mb-0">Nice Cars for Good People.</p>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <p class="mb-0">
-              &copy; 2024 Rent To Own Auto Centers. All rights reserved.
-            </p>
-          </div>
+        <div class="rto-footer__bottom">
+          <p class="mb-0">
+            &copy; 2026 Rent To Own Auto Centers. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
