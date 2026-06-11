@@ -167,28 +167,16 @@ h5 {
   min-height: 560px;
   display: flex;
   align-items: center;
-  /* The logo is baked into the LEFT of the image on its own blue panel, so
-     keep the overlay light and even — no heavy left gradient that would dim
-     the logo. A gentle right-side wash keeps the headline readable. */
+  /* No overlay wash — the logo sits on its own navy panel baked into the LEFT
+     of the image, and the headline relies on its text-shadow for contrast.
+     The image is shown as-is. */
   /* Fallback for browsers without image-set() */
-  background-image: linear-gradient(
-      270deg,
-      rgba(11, 28, 66, 0.6) 0%,
-      rgba(11, 28, 66, 0.25) 35%,
-      rgba(11, 28, 66, 0) 60%
-    ),
-    url("../images/cars/camaro-hero.jpg");
+  background-image: url("../images/cars/camaro-hero.jpg");
   /* Modern browsers: prefer WebP, fall back to JPG */
-  background-image: linear-gradient(
-      270deg,
-      rgba(11, 28, 66, 0.6) 0%,
-      rgba(11, 28, 66, 0.25) 35%,
-      rgba(11, 28, 66, 0) 60%
-    ),
-    image-set(
-      url("../images/cars/camaro-hero.webp") type("image/webp"),
-      url("../images/cars/camaro-hero.jpg") type("image/jpeg")
-    );
+  background-image: image-set(
+    url("../images/cars/camaro-hero.webp") type("image/webp"),
+    url("../images/cars/camaro-hero.jpg") type("image/jpeg")
+  );
   background-size: cover;
   background-position: center;
   color: #fff;
@@ -215,13 +203,14 @@ h5 {
   font-weight: 800;
   line-height: 1.1;
   margin-bottom: 1rem;
-  text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.55), 0 4px 24px rgba(0, 0, 0, 0.45);
 }
 
 .rto-hero p.lead {
   font-size: 1.2rem;
-  color: rgba(255, 255, 255, 0.92);
+  color: #fff;
   margin-bottom: 1.75rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.55);
 }
 
 .rto-hero__badges {
