@@ -167,22 +167,23 @@ h5 {
   min-height: 560px;
   display: flex;
   align-items: center;
-  /* Fallback for browsers without image-set(): JPG + gradient overlay */
+  /* The logo is baked into the LEFT of the image on its own blue panel, so
+     keep the overlay light and even — no heavy left gradient that would dim
+     the logo. A gentle right-side wash keeps the headline readable. */
+  /* Fallback for browsers without image-set() */
   background-image: linear-gradient(
-      100deg,
-      rgba(13, 38, 92, 0.96) 0%,
-      rgba(16, 46, 111, 0.78) 45%,
-      rgba(25, 68, 164, 0.35) 72%,
-      rgba(25, 68, 164, 0.11) 100%
+      270deg,
+      rgba(11, 28, 66, 0.6) 0%,
+      rgba(11, 28, 66, 0.25) 35%,
+      rgba(11, 28, 66, 0) 60%
     ),
     url("../images/cars/camaro-hero.jpg");
   /* Modern browsers: prefer WebP, fall back to JPG */
   background-image: linear-gradient(
-      100deg,
-      rgba(13, 38, 92, 0.96) 0%,
-      rgba(16, 46, 111, 0.78) 45%,
-      rgba(25, 68, 164, 0.35) 72%,
-      rgba(25, 68, 164, 0.11) 100%
+      270deg,
+      rgba(11, 28, 66, 0.6) 0%,
+      rgba(11, 28, 66, 0.25) 35%,
+      rgba(11, 28, 66, 0) 60%
     ),
     image-set(
       url("../images/cars/camaro-hero.webp") type("image/webp"),
@@ -196,6 +197,17 @@ h5 {
 .rto-hero__content {
   max-width: 640px;
   padding: 3rem 0;
+}
+
+/* When the logo is baked into the image's left side, push the text content
+   to the right so the two don't overlap. */
+.rto-hero--has-logo {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.rto-hero--has-logo .rto-hero__badges {
+  justify-content: flex-end;
 }
 
 .rto-hero h1 {
