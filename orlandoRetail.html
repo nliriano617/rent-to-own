@@ -23,13 +23,18 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link rel="stylesheet" type="text/css" href="./css/styles2.css" />
+    <!-- Shared modern site styles -->
+    <link href="css/site.css" rel="stylesheet" />
   </head>
 
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg rto-navbar sticky-top">
       <div class="container">
-        <a class="navbar-brand" href="/">Rent To Own Auto Centers</a>
+        <a class="navbar-brand" href="/">
+          <img src="images/my-logo2.png" alt="Rent To Own Auto Centers logo" />
+          <span>Rent To Own Auto Centers</span>
+        </a>
         <button
           class="navbar-toggler"
           type="button"
@@ -42,7 +47,7 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ml-auto">
+          <ul class="navbar-nav ml-auto align-items-lg-center">
             <li class="nav-item">
               <a class="nav-link" href="/">Home</a>
             </li>
@@ -54,12 +59,12 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" href="/orlandoRetail.html"
-                >Retail Inventory (CASH SALE)
-              </a>
+                >Retail Inventory (Cash Sale)</a
+              >
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/submit-an-application.html"
-                >Submit an Application</a
+            <li class="nav-item ml-lg-2">
+              <a class="nav-link nav-cta" href="/submit-an-application.html"
+                >Apply Now</a
               >
             </li>
           </ul>
@@ -78,12 +83,18 @@
         <strong>1217 Spruce Ave, Orlando, FL 32824</strong>
       </a>
     </div>
-    <div class="container mt-5">
-      <h1>Orlando Retail Inventory</h1>
-      <p>Check out our latest inventory below and call us at 321-319-4300:</p>
+    <!-- Page header -->
+    <header class="rto-page-header">
+      <div class="container">
+        <h1>Orlando Retail Inventory</h1>
+        <p>Cash sale vehicles &middot; Call us at 321-319-4300</p>
+      </div>
+    </header>
 
-      <!-- Car Cards -->
-      <div class="row">
+    <!-- Inventory (generated dynamically from the SQLite/Podio database) -->
+    <section class="rto-section rto-inventory">
+      <div class="container">
+        <div class="row">
         <div class="col-md-4 mb-4">
           <div class="card">
             <img
@@ -288,61 +299,75 @@
       </div> -->
         <!-- end of car -->
       </div>
-    </div>
+      </div>
+    </section>
 
-    <footer class="bg-dark text-white text-center py-4">
+    <!-- Footer -->
+    <footer class="rto-footer">
       <div class="container">
         <div class="row">
           <div class="col-lg-4 mb-4">
-            <h5>Contact Us</h5>
-            <p>
+            <h5>Visit Us</h5>
+            <p class="mb-1">
+              <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank"
+                >1217 Spruce Ave<br />Orlando, FL 32824</a
+              >
+            </p>
+            <p class="mb-1">
+              Phone: <a href="tel:3213194300">321-319-4300</a>
+            </p>
+            <p class="mb-0">
               Email:
               <a href="mailto:orlandorc1@rtocenter.com"
                 >orlandorc1@rtocenter.com</a
               >
             </p>
-            <p>Phone: 321-319-4300</p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Quick Links</h5>
+            <p class="mb-1"><a href="/how-it-works.html">How It Works</a></p>
+            <p class="mb-1">
+              <a href="/orlando.html">Rent To Own Inventory</a>
+            </p>
+            <p class="mb-1">
+              <a href="/orlandoRetail.html">Retail Inventory (Cash Sale)</a>
+            </p>
+            <p class="mb-0">
+              <a href="/submit-an-application.html">Submit an Application</a>
+            </p>
           </div>
           <div class="col-lg-4 mb-4">
             <h5>Follow Us</h5>
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="https://www.facebook.com/107017367354248">Facebook</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.twitter.com/rtoacenters">Twitter/X</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="https://www.instagram.com/rtoacenters">Instagram</a>
-              </li>
-            </ul>
-          </div>
-          <div class="col-lg-4 mb-4">
-            <h5>Newsletter</h5>
-            <form>
-              <div class="input-group">
-                <input
-                  type="email"
-                  class="form-control"
-                  placeholder="Enter your email"
-                />
-                <div class="input-group-append">
-                  <button class="btn btn-outline-light" type="button">
-                    Subscribe
-                  </button>
-                </div>
-              </div>
-            </form>
+            <div class="rto-social mb-3">
+              <a
+                href="https://www.facebook.com/61587563066623"
+                target="_blank"
+                aria-label="Facebook"
+                title="Facebook"
+                >f</a
+              >
+              <a
+                href="https://www.twitter.com/rtoacenters"
+                target="_blank"
+                aria-label="Twitter/X"
+                title="Twitter/X"
+                >X</a
+              >
+              <a
+                href="https://www.instagram.com/rtoacenters"
+                target="_blank"
+                aria-label="Instagram"
+                title="Instagram"
+                >ig</a
+              >
+            </div>
+            <p class="mb-0">Nice Cars for Good People.</p>
           </div>
         </div>
-      </div>
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col">
-            <p class="mb-0">
-              &copy; 2024 Rent To Own Auto Centers. All rights reserved.
-            </p>
-          </div>
+        <div class="rto-footer__bottom">
+          <p class="mb-0">
+            &copy; 2026 Rent To Own Auto Centers. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
