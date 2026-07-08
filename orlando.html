@@ -19,7 +19,8 @@
   <title>Rent To Own Auto Centers</title>
   <!-- Bootstrap CSS -->
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" type="text/css" href="./css/styles2.css" />
+    <!-- Shared modern site styles -->
+    <link href="css/site.css" rel="stylesheet" />
 </head>
   <style id="sold-stamp-css">
     .card { position: relative; }
@@ -47,43 +48,49 @@
   </style>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="/">Rent To Own Auto Centers</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/how-it-works.html">How It Works</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" href="/orlando.html">Rent To Own Inventory</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/orlandoRetail.html">Retail Inventory</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/submit-an-application.html"
-              >Submit an Application</a
-            >
-          </li>
-        </ul>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg rto-navbar sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="images/my-logo2.png" alt="Rent To Own Auto Centers logo" />
+          <span>Rent To Own Auto Centers</span>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto align-items-lg-center">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/how-it-works.html">How It Works</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/orlando.html">Rent To Own Inventory</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/orlandoRetail.html"
+                >Retail Inventory (Cash Sale)</a
+              >
+            </li>
+            <li class="nav-item ml-lg-2">
+              <a class="nav-link nav-cta" href="/submit-an-application.html"
+                >Apply Now</a
+              >
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 <!-- MOVING ON OCTOBER 1 MESSAGE -->
     <div class="alert alert-warning text-center mb-0" role="alert">
       🚗 We moved! Our new address is:
@@ -96,14 +103,18 @@
       </a>
     </div>
   
-  <div class="container mt-5">
-    <h1>Orlando Rent To Own Inventory</h1>
-    <p>Check out our latest inventory below and call us at 321-319-4300:</p>
-      <!-- Car Cards -->
+  <!-- Page header -->
+  <header class="rto-page-header">
+    <div class="container">
+      <h1>Orlando Rent To Own Inventory</h1>
+      <p>No credit checks &middot; No interest &middot; Call us at 321-319-4300</p>
+    </div>
+  </header>
 
-  <!-- Car Cards -->
-   
-    <div class="row">
+  <!-- Inventory (generated dynamically from the SQLite/Podio database) -->
+  <section class="rto-section rto-inventory">
+    <div class="container">
+      <div class="row">
 
       <div class="col-md-4 mb-4">
         <div class="card">
@@ -663,240 +674,79 @@
       <!-- start of car -->
              <!-- end of car -->
       <!--div class="col-md-4 mb-4" -->
-        <!-- RTO8172 removed 2026-05-11T18:23:44</div> -->
-      
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/9010 1.JPG" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2018 Chevrolet Cruze  </h5>
-            <p class="card-text">RTO9010 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/7310.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2008 Cadillac DTS   </h5>
-            <p class="card-text">RTO7310  <span style="color:red ">Cash Sale $2995 Or RTO With $500 DOWN!! </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8009S.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2012 TOYOTA SIENNA LE  </h5>
-            <p class="card-text">RTO8009 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8236.jpg" class="card-img-top" alt="..." />
-          <div class="card-body">
-            <h5 class="card-title">2016 KIA SOUL </h5>
-            <p class="card-text">RTO8236 <span style="color:red "> Cash Sale $4995 Or RTO $600 DOWN!</span> </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/8149.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2014 Buick Verano Leather 198K Miles 30-Day warranty </h5>
-            <p class="card-text">RTO8149 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/7269.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2014 DODGE GRAND CARAVAN</h5>
-            <p class="card-text">RTO7269  </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/9038.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2014 Chevy CRUZE LT RS </h5>
-            <p class="card-text">RTO9038 <span style="color:red "> $3995 Cash sale! 154K Miles </span> </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/7309.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2012  Chevy Cruze </h5>
-            <p class="card-text">RTO7309 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8230.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2011 Toyota Corolla LE</h5>
-            <p class="card-text">RTO8230 <span style="color:red "> Cash Sale $3995 Or RTO $500 DOWN</span> </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-  
-      <!-- start of car -->
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8132S.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2013 Hyundai Sonata</h5>
-            <p class="card-text">RTO8132 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
-  
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8145.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2014 Chevy Sonic Hatch</h5>
-            <p class="card-text">RTO8145  <span style="color:red ">Cash Sale $3995 Or RTO $500 DOWN!</span>  </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/8147.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2016 Dodge Journey XTS </h5>
-            <p class="card-text">RTO8147 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/7092.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2004 Dodge Ram 1500 4x2 </h5>
-            <p class="card-text">RTO7095  </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/sold/8255.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2013 Toyota Corolla</h5>
-            <p class="card-text">RTO8255 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-md-4 mb-4">
-        <div class="card">
-          <img src="./images/cars/7072.jpg" class="card-img-top" alt="..." />
-
-          <div class="card-body">
-            <h5 class="card-title">2010 Mazda CX9 Touring</h5>
-            <p class="card-text">RTO7072 </p>
-            <!-- <a href="#" class="btn btn-primary">View Details</a>  -->
-          </div>
-        </div>
-      </div>
-      <!-- end of car -->
+        <!-- RTO8172 removed 2026-05-11T18:23:44</div>
     </div>
-  </div>
+  </section>
 
-  <footer class="bg-dark text-white text-center py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4">
-          <h5>Contact Us</h5>
-          <p>Email: <a href="mailto:orlandorc1@rtocenter.com">orlandorc1@rtocenter.com</a></p>
-          <p>Phone: 321-319-4300</p>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5>Follow Us</h5>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="https://www.facebook.com/107017367354248">Facebook</a></li>
-            <li class="list-inline-item"><a href="https://www.twitter.com/rtoacenters">Twitter/X</a></li>
-            <li class="list-inline-item"><a href="https://www.instagram.com/rtoacenters">Instagram</a></li>
-          </ul>
-        </div>
-        <div class="col-lg-4 mb-4">
-          <h5>Newsletter</h5>
-          <form>
-            <div class="input-group">
-              <input type="email" class="form-control" placeholder="Enter your email">
-              <div class="input-group-append">
-                <button class="btn btn-outline-light" type="button">Subscribe</button>
-              </div>
+    <!-- Footer -->
+    <footer class="rto-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4">
+            <h5>Visit Us</h5>
+            <p class="mb-1">
+              <a href="https://maps.app.goo.gl/JhBevjUTZJxTSiMT9" target="_blank"
+                >1217 Spruce Ave<br />Orlando, FL 32824</a
+              >
+            </p>
+            <p class="mb-1">
+              Phone: <a href="tel:3213194300">321-319-4300</a>
+            </p>
+            <p class="mb-0">
+              Email:
+              <a href="mailto:orlandorc1@rtocenter.com"
+                >orlandorc1@rtocenter.com</a
+              >
+            </p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Quick Links</h5>
+            <p class="mb-1"><a href="/how-it-works.html">How It Works</a></p>
+            <p class="mb-1">
+              <a href="/orlando.html">Rent To Own Inventory</a>
+            </p>
+            <p class="mb-1">
+              <a href="/orlandoRetail.html">Retail Inventory (Cash Sale)</a>
+            </p>
+            <p class="mb-0">
+              <a href="/submit-an-application.html">Submit an Application</a>
+            </p>
+          </div>
+          <div class="col-lg-4 mb-4">
+            <h5>Follow Us</h5>
+            <div class="rto-social mb-3">
+              <a
+                href="https://www.facebook.com/61587563066623"
+                target="_blank"
+                aria-label="Facebook"
+                title="Facebook"
+                >f</a
+              >
+              <a
+                href="https://www.twitter.com/rtoacenters"
+                target="_blank"
+                aria-label="Twitter/X"
+                title="Twitter/X"
+                >X</a
+              >
+              <a
+                href="https://www.instagram.com/rtoacenters"
+                target="_blank"
+                aria-label="Instagram"
+                title="Instagram"
+                >ig</a
+              >
             </div>
-          </form>
+            <p class="mb-0">Nice Cars for Good People.</p>
+          </div>
+        </div>
+        <div class="rto-footer__bottom">
+          <p class="mb-0">
+            &copy; 2026 Rent To Own Auto Centers. All rights reserved.
+          </p>
         </div>
       </div>
-    </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col">
-          <p class="mb-0">&copy; 2024 Rent To Own Auto Centers. All rights reserved.</p>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
 
   <!-- Bootstrap JS and dependencies -->
