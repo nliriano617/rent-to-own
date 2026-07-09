@@ -121,7 +121,7 @@
           '<div class="card-body d-flex flex-column">' +
             '<h5 class="card-title">' + esc(v.title) + "</h5>" +
             '<p class="card-text">' + line + "</p>" +
-            '<a href="' + INVENTORY_PAGE + '" class="btn btn-accent btn-sm mt-auto">' +
+            '<a href="' + INVENTORY_PAGE + "#rto" + esc(v.rto) + '" class="btn btn-accent btn-sm mt-auto">' +
               "See This Car</a>" +
           "</div>" +
         "</div>" +

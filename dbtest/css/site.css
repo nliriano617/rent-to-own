@@ -532,3 +532,21 @@ h5 {
     padding: 3rem 0;
   }
 }
+
+/* --------------------------------------------------------------------------
+   "See This Car" arrival highlight
+   Flashes a ring around a car when the inventory page is opened via a
+   #rto<number> link from the homepage Featured Vehicles showroom.
+   -------------------------------------------------------------------------- */
+@keyframes rtoCarHighlight {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
+  10%  { box-shadow: 0 0 0 5px rgba(255, 179, 0, 0.75); }
+  40%  { box-shadow: 0 0 0 9px rgba(255, 179, 0, 0.28); }
+  100% { box-shadow: 0 0 0 9px rgba(255, 179, 0, 0); }
+}
+.car-highlight {
+  animation: rtoCarHighlight 1.3s ease-out 3;
+  border-radius: var(--rto-radius, 14px);
+  position: relative;
+  z-index: 5;
+}

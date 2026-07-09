@@ -742,6 +742,34 @@
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <!-- Scroll to & highlight a specific car when linked from a "See This Car" button -->
+  <script>
+    (function () {
+      // Give each inventory card an id based on its RTO number (e.g. rto9035).
+      document.querySelectorAll(".rto-inventory .card").forEach(function (card) {
+        var txt = (card.querySelector(".card-text") || {}).textContent || "";
+        var m = txt.match(/RTO\s*(\d+)/i);
+        if (m) {
+          var id = "rto" + m[1];
+          if (!document.getElementById(id)) card.id = id;
+        }
+      });
+      function focusCar() {
+        var h = location.hash;
+        if (!h || h.length < 2) return;
+        var el = document.getElementById(h.slice(1).toLowerCase());
+        if (!el) return;
+        el.scrollIntoView({ behavior: "smooth", block: "center" });
+        el.classList.remove("car-highlight");
+        void el.offsetWidth; // restart the animation if re-triggered
+        el.classList.add("car-highlight");
+      }
+      window.addEventListener("load", focusCar);
+      window.addEventListener("hashchange", focusCar);
+      if (document.readyState === "complete") focusCar();
+    })();
+  </script>
 </body>
 
 </html>
