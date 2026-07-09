@@ -535,17 +535,17 @@ h5 {
 
 /* --------------------------------------------------------------------------
    "See This Car" arrival highlight
-   Flashes a ring around a car when the inventory page is opened via a
-   #rto<number> link from the homepage Featured Vehicles showroom.
+   Holds a solid yellow border around a car for ~5s (then fades out) when the
+   inventory page is opened via a #rto<number> link from the homepage
+   Featured Vehicles showroom.
    -------------------------------------------------------------------------- */
 @keyframes rtoCarHighlight {
-  0%   { box-shadow: 0 0 0 0 rgba(255, 179, 0, 0); }
-  10%  { box-shadow: 0 0 0 5px rgba(255, 179, 0, 0.75); }
-  40%  { box-shadow: 0 0 0 9px rgba(255, 179, 0, 0.28); }
-  100% { box-shadow: 0 0 0 9px rgba(255, 179, 0, 0); }
+  0%   { box-shadow: 0 0 0 4px rgba(255, 179, 0, 1); }
+  92%  { box-shadow: 0 0 0 4px rgba(255, 179, 0, 1); }
+  100% { box-shadow: 0 0 0 4px rgba(255, 179, 0, 0); }
 }
 .car-highlight {
-  animation: rtoCarHighlight 1.3s ease-out 3;
+  animation: rtoCarHighlight 5s ease 1;
   border-radius: var(--rto-radius, 14px);
   position: relative;
   z-index: 5;
