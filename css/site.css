@@ -530,7 +530,7 @@ h5 {
 
 /* --------------------------------------------------------------------------
    "See This Car" arrival highlight
-   Holds a solid yellow border around a car for ~5s (then fades out) when the
+   Holds a solid yellow border around a car for ~5s (then fades) when the
    inventory page is opened via a #rto<number> link from the homepage
    Featured Vehicles showroom.
    -------------------------------------------------------------------------- */

@@ -1,3 +1,16 @@
 *.bak.*
 *.tmp
 *.out
+
+# Server secrets and local data — NEVER commit (Podio credentials live here)
+server/config.json
+server/roadside.db
+server/roadside.db-journal
+server/roadside.db-wal
+server/__pycache__/
+__pycache__/
+.DS_Store
+
+# Full-size photos downloaded from Podio (regenerated locally; too big to commit).
+# The publish step writes RESIZED web copies to images/inventory/, which ARE committed.
+images/cars/podio/
