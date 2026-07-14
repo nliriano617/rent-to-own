@@ -47,6 +47,10 @@ DEFAULT_SETTINGS = {
     "featured_count": "3",                     # 2 or 3
     "featured_max_payment": "",                # blank = no limit
     "featured_manual_rtos": "",                # comma-separated RTOs for manual mode
+    # Vehicles taken down from the whole public site by RTO number (comma-
+    # separated), even if Podio still lists them. Managed from the admin console.
+    # Seeded with 8173 (flagged STOLEN in Podio) so it stays hidden across syncs.
+    "hidden_rtos": "8173",
 }
 
 # in-memory admin sessions: token -> expiry epoch
@@ -228,8 +232,16 @@ def vehicles_feed(feed="rto"):
     con.close()
 
     keyword = (settings.get("retail_keyword") or "").strip().lower()
+    # Cars taken down from the whole site via the admin "Hidden Vehicles" setting.
+    hidden = {
+        h.strip().lower()
+        for h in (settings.get("hidden_rtos", "") or "").split(",")
+        if h.strip()
+    }
     out = []
     for r in rows:
+        if str(r["rto"] or "").strip().lower() in hidden:
+            continue  # hidden from the public site by admin
         comments = (r["comments"] or "").strip()
         comment = (r["comment"] or "").strip()
         if feed == "retail":
