@@ -150,6 +150,18 @@
     input:focus { outline: none; border-color: var(--blue-light); }
     .help { color: var(--muted); font-size: 0.85rem; margin-top: 0.3rem; }
 
+    /* ---- Remove-a-vehicle ---- */
+    .remove-input { display: flex; gap: 0.6rem; align-items: stretch; }
+    .remove-input input { flex: 1; }
+    .remove-input .btn { white-space: nowrap; }
+    .removed-row { display: flex; align-items: center; gap: 0.7rem; padding: 0.6rem 0; border-bottom: 1px solid var(--border); }
+    .removed-row:last-child { border-bottom: 0; }
+    .removed-row .rnum { font-weight: 800; color: var(--blue-dark); }
+    .removed-row .rname { flex: 1; color: var(--ink); }
+    .btn-restore { border: 1.5px solid var(--border); background: #fff; color: var(--blue); border-radius: 999px; padding: 0.35rem 1rem; font-size: 0.85rem; font-weight: 700; cursor: pointer; transition: 0.12s; }
+    .btn-restore:hover { border-color: var(--blue); background: var(--blue); color: #fff; }
+    .removed-empty { color: var(--muted); font-size: 0.9rem; padding: 0.4rem 0; }
+
     /* ---- History ---- */
     .hist-item { display: flex; align-items: center; gap: 0.7rem; padding: 0.55rem 0; border-bottom: 1px solid var(--border); font-size: 0.9rem; }
     .hist-item:last-child { border-bottom: 0; }
@@ -316,17 +328,23 @@
         <div class="help">Used only when "Specific cars I pick" is selected above.</div>
       </div>
 
-      <!-- Hidden vehicles (taken down from the whole site) -->
+      <!-- Remove a vehicle (take a specific car off the whole site) -->
       <div class="card" style="margin-top: 1.1rem;">
-        <h2>Hidden Vehicles (Taken Down)</h2>
-        <p class="sub">Remove specific cars from the entire public site — the homepage
-          showroom and both inventory pages — even if Podio still lists them.</p>
-        <label class="fld">Car numbers to take down (RTO numbers, comma-separated)</label>
-        <input type="text" id="hiddenRtos" placeholder="e.g. 8173, 9042" />
-        <div class="help">These vehicles won't appear anywhere on the public site.
-          The setting sticks across automatic Podio updates, so a hidden car stays
-          down until you remove its number from this list. To take a car down, add
-          its RTO number here and press <strong>Save Changes</strong>.</div>
+        <h2>Remove a Vehicle</h2>
+        <p class="sub">Take a specific car off the entire public site — the homepage
+          showroom and both inventory pages — by its stock number, even if Podio
+          still lists it. It stays off until you restore it.</p>
+        <label class="fld">Stock number (RTO)</label>
+        <div class="remove-input">
+          <input type="text" id="removeRto" placeholder="e.g. 8173"
+                 onkeydown="if(event.key==='Enter'){event.preventDefault();removeVehicle();}" />
+          <button class="btn btn-primary" type="button" onclick="removeVehicle()">Remove from site</button>
+        </div>
+        <div id="removeMsg" class="help"></div>
+        <label class="fld" style="margin-top: 1.1rem;">Removed vehicles</label>
+        <div id="removedList"></div>
+        <div class="help">Removing a car takes effect on the live site the next time
+          it updates/publishes. Press <strong>Restore</strong> to put a car back.</div>
       </div>
 
       <!-- Save bar -->
@@ -390,7 +408,7 @@ async function loadState() {
   $("featManual").value = s.featured_manual_rtos || "";
   $("phone").value = s.site_phone || "";
   $("retailKw").value = s.retail_keyword || "";
-  $("hiddenRtos").value = s.hidden_rtos || "";
+  renderRemoved();
   syncPresetHighlight();
 
   // Status toggles
@@ -504,7 +522,6 @@ async function saveSettings() {
     featured_count: $("featCount").value,
     featured_max_payment: $("featMaxPay").value,
     featured_manual_rtos: $("featManual").value,
-    hidden_rtos: $("hiddenRtos").value,
   };
   const r = await fetch("/api/settings", {
     method: "POST", headers: { "Content-Type": "application/json", ...authHeaders() },
@@ -516,6 +533,67 @@ async function saveSettings() {
     setTimeout(() => m.classList.add("hidden"), 2500);
     loadState();
   }
+}
+
+// --- Remove a Vehicle ------------------------------------------------------ //
+function currentHidden() {
+  const raw = (STATE && STATE.settings && STATE.settings.hidden_rtos) || "";
+  return raw.split(",").map(x => x.trim()).filter(Boolean);
+}
+
+async function saveHidden(list) {
+  const r = await fetch("/api/settings", {
+    method: "POST",
+    headers: { "Content-Type": "application/json", ...authHeaders() },
+    body: JSON.stringify({ hidden_rtos: list.join(",") }),
+  });
+  if (r.ok) { await loadState(); }
+  return r.ok;
+}
+
+async function removeVehicle() {
+  const rto = $("removeRto").value.trim().replace(/[^0-9A-Za-z]/g, "");
+  const msg = $("removeMsg");
+  if (!rto) { msg.textContent = "Enter a stock number first."; return; }
+  const list = currentHidden();
+  if (list.includes(rto)) {
+    $("removeRto").value = "";
+    msg.textContent = "#" + rto + " is already removed.";
+    return;
+  }
+  list.push(rto);
+  const ok = await saveHidden(list);
+  $("removeRto").value = "";
+  msg.textContent = ok ? "Removed #" + rto + " from the site." : "Couldn't save — please try again.";
+}
+
+async function restoreVehicle(rto) {
+  const ok = await saveHidden(currentHidden().filter(x => x !== String(rto)));
+  if (ok) $("removeMsg").textContent = "Restored #" + rto + ".";
+}
+
+function renderRemoved() {
+  const box = $("removedList");
+  if (!box) return;
+  const nums = currentHidden();
+  const titles = {};
+  ((STATE && STATE.hidden_vehicles) || []).forEach(v => { titles[String(v.rto)] = v.title; });
+  box.innerHTML = "";
+  if (!nums.length) {
+    box.innerHTML = '<div class="removed-empty">No vehicles are removed right now.</div>';
+    return;
+  }
+  nums.forEach(rto => {
+    const row = document.createElement("div");
+    row.className = "removed-row";
+    row.innerHTML =
+      '<span class="rnum">#' + rto + '</span>' +
+      '<span class="rname"></span>' +
+      '<button class="btn-restore" type="button">Restore</button>';
+    row.querySelector(".rname").textContent = titles[rto] || "Vehicle";
+    row.querySelector("button").addEventListener("click", () => restoreVehicle(rto));
+    box.appendChild(row);
+  });
 }
 
 async function refreshNow() {

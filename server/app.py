@@ -490,11 +490,34 @@ class Handler(BaseHTTPRequestHandler):
                 counts[r["status"] or "(blank)"] = r["c"]
         except Exception:
             pass
+        # Removed ("hidden") vehicles, with a display title looked up from the
+        # inventory table so the admin can show "#8173 — 2011 Ford Flex" even
+        # though hidden cars are excluded from the public /api/vehicles feed.
+        settings = get_settings_dict()
+        hidden_nums = [
+            h.strip() for h in (settings.get("hidden_rtos", "") or "").split(",") if h.strip()
+        ]
+        titles = {}
+        if hidden_nums:
+            try:
+                qs = ",".join("?" for _ in hidden_nums)
+                for r in con.execute(
+                    f"SELECT rto, year, make, model FROM inventory WHERE rto IN ({qs})",
+                    hidden_nums,
+                ):
+                    t = " ".join(
+                        b for b in (r["year"], r["make"], r["model"]) if b and b != "None"
+                    ).strip()
+                    titles[str(r["rto"])] = t
+            except Exception:
+                pass
+        hidden_vehicles = [{"rto": n, "title": titles.get(n, "")} for n in hidden_nums]
         con.close()
         return {
-            "settings": get_settings_dict(),
+            "settings": settings,
             "sync_log": [dict(r) for r in logs],
             "status_counts": counts,
+            "hidden_vehicles": hidden_vehicles,
             "running": SCHEDULER.running,
         }
 
