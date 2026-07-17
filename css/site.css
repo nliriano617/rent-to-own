@@ -527,21 +527,3 @@ h5 {
     padding: 3rem 0;
   }
 }
-
-/* --------------------------------------------------------------------------
-   "See This Car" arrival highlight
-   Holds a solid yellow border around a car for ~5s (then fades) when the
-   inventory page is opened via a #rto<number> link from the homepage
-   Featured Vehicles showroom.
-   -------------------------------------------------------------------------- */
-@keyframes rtoCarHighlight {
-  0%   { box-shadow: 0 0 0 4px rgba(255, 179, 0, 1); }
-  92%  { box-shadow: 0 0 0 4px rgba(255, 179, 0, 1); }
-  100% { box-shadow: 0 0 0 4px rgba(255, 179, 0, 0); }
-}
-.car-highlight {
-  animation: rtoCarHighlight 5s ease 1;
-  border-radius: var(--rto-radius, 14px);
-  position: relative;
-  z-index: 5;
-}

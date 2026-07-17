@@ -57,7 +57,7 @@
 
     return (
       '<div class="col-md-4 mb-4">' +
-        '<div class="' + cardClass + '" id="rto' + esc(v.rto) + '">' +
+        '<div class="' + cardClass + '">' +
           badge + img +
           '<div class="card-body">' +
             '<h5 class="card-title">' + esc(v.title) + "</h5>" +
@@ -66,19 +66,6 @@
         "</div>" +
       "</div>"
     );
-  }
-
-  // When arriving from a "See This Car" link (…Orlando2.html#rto9035), scroll to
-  // that card and flash a highlight around it.
-  function focusFromHash() {
-    var h = location.hash;
-    if (!h || h.length < 2) return;
-    var el = document.getElementById(h.slice(1).toLowerCase());
-    if (!el) return;
-    el.scrollIntoView({ behavior: "smooth", block: "center" });
-    el.classList.remove("car-highlight");
-    void el.offsetWidth; // restart the animation if it's already applied
-    el.classList.add("car-highlight");
   }
 
   function render() {
@@ -99,7 +86,6 @@
         grid.innerHTML = data.vehicles
           .map(function (v) { return card(v, data.show_mileage); })
           .join("");
-        focusFromHash();
       })
       .catch(function () {
         grid.innerHTML =
@@ -113,5 +99,4 @@
   } else {
     render();
   }
-  window.addEventListener("hashchange", focusFromHash);
 })();
